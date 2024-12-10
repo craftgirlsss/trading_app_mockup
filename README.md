@@ -1,16 +1,18 @@
-# valbury_mockup
+# Trading Forex App Mockup
 
-A new Flutter project.
+Aplikasi Trading Forex untuk projek kerjaan
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+```
+git clone https://github.com/craftgirlsss/trading_app_mockup
+cd trading_app_mockup
+flutter pub get
+flutter run
+```
 
-A few resources to get you started if this is your first Flutter project:
+![1733825723598](images/README/1733825723598.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![1733825737839](images/README/1733825737839.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![1733825747615](images/README/1733825747615.png)
