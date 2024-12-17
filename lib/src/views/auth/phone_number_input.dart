@@ -1,12 +1,14 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:valbury_mockup/src/components/appbars/default_appbar.dart';
 import 'package:valbury_mockup/src/components/buttons/global_buttons.dart';
 import 'package:valbury_mockup/src/components/styles/text_style.dart';
 import 'package:valbury_mockup/src/components/textfields/phone_text_field.dart';
 import 'package:valbury_mockup/src/helpers/theme/annotated_region.dart';
 import 'package:valbury_mockup/src/helpers/variable/global_variable.dart';
+import 'package:valbury_mockup/src/views/auth/otp_page.dart';
 
 class PhoneNumberInput extends StatefulWidget {
   const PhoneNumberInput({super.key});
@@ -18,6 +20,8 @@ class PhoneNumberInput extends StatefulWidget {
 class _PhoneNumberInputState extends State<PhoneNumberInput> {
   TextEditingController controller = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  var countryCode = ''.obs;
+  var isLoading = false.obs;
 
   @override
   void dispose() {
@@ -50,9 +54,12 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CountryCodePicker(
+                      Obx(() => isLoading.value ? Container() : CountryCodePicker(
                         onChanged: (value) {
-                          debugPrint(value.toString());
+                          countryCode.value = value.dialCode!;
+                        },
+                        onInit: (value) {
+                          countryCode.value = value!.dialCode!;
                         },
                         textStyle: GlobalTextStyle.defaultTextStyle(color: Colors.white),
                         initialSelection: 'ID',
@@ -60,7 +67,7 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
                         showFlagMain: true,
                         favorite: const ['+62', 'ID'],
                         flagDecoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
+                          borderRadius: BorderRadius.circular(7)),
                         ),
                       ),
                       Expanded(
@@ -81,8 +88,11 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
               onPressed: (){
                 if(_formKey.currentState!.validate()){
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
+                    SnackBar(content: Text('Processing Data', style: GlobalTextStyle.defaultTextStyle()), backgroundColor: Colors.white),
                   );
+                  Future.delayed(const Duration(seconds: 2), (){
+                    Get.to(() => OtpPage(phone: countryCode.value+controller.text));
+                  });
                 }
               },
             ),

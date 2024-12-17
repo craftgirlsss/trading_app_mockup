@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:valbury_mockup/src/helpers/variable/global_variable.dart';
 import 'package:valbury_mockup/src/views/introduction/splashscreen.dart';
+// import 'package:valbury_mockup/src/views/mainpage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'All Media Indo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: "Poppins",
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         buttonTheme: const ButtonThemeData(
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       home: const Splashscreen(),
+      // home: const Mainpage(),
     );
   }
 }

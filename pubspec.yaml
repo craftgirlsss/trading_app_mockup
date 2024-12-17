@@ -14,6 +14,12 @@ dependencies:
   get: ^4.6.6
   icons_plus: ^5.0.0
   country_code_picker: ^3.1.0
+  flutter_otp_text_field: ^1.2.0
+  country_flags: ^3.0.0
+  http: ^1.2.2
+  intl: ^0.20.1
+  timeago: ^3.2.2
+  chat_bubbles: ^0.8.1
 
 dev_dependencies:
   flutter_test:

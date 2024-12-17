@@ -19,7 +19,7 @@ class GlobalButtons {
     );
   }
 
-  static ElevatedButton defaultElevatedButton({Function()? onPressed, String? title}){
+  static ElevatedButton defaultElevatedButton({Function()? onPressed, String? title, double? fontSize}){
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 0,
@@ -27,11 +27,11 @@ class GlobalButtons {
         backgroundColor: GlobalVariableColors.primaryColor
       ),
       onPressed: onPressed,
-      child: Text(title ?? "Submit", style: GlobalTextStyle.defaultTextStyle(fontWeight: FontWeight.bold, color: Colors.white))
+      child: Text(title ?? "Submit", style: GlobalTextStyle.defaultTextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: fontSize))
     );
   }
 
-  static OutlinedButton defaultOutlinedButton({Function()? onPressed, String? title, Color? outlineColor}){
+  static OutlinedButton defaultOutlinedButton({Function()? onPressed, String? title, Color? outlineColor, Color? titleColor, FontWeight? fontWeight, double? fontSize}){
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
         elevation: 0,
@@ -39,7 +39,7 @@ class GlobalButtons {
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
       ),
       onPressed: onPressed,
-      child: Text(title ?? "Submit", style: GlobalTextStyle.defaultTextStyle(fontWeight: FontWeight.bold, color: Colors.white))
+      child: Text(title ?? "Submit", style: GlobalTextStyle.defaultTextStyle(fontWeight: fontWeight ?? FontWeight.bold, color: titleColor ?? Colors.white, fontSize: fontSize ?? 13))
     );
   }
 }

@@ -13,4 +13,45 @@ class GlobalAppBar {
       actions: actions,
     );
   }
+
+  static AppBar appbarMainPage({List<Widget>? actions, Color? iconColor, Widget? leading}){
+    return AppBar(
+      backgroundColor: Colors.white,
+      forceMaterialTransparency: true,
+      elevation: 0,
+      leadingWidth: 200,
+      leading: leading,
+      iconTheme: IconThemeData(color: iconColor ?? GlobalVariableColors.primaryColor),
+      actions: actions,
+    );
+  }
+
+
+  static AppBar appbarMarket({var bottom, List<Widget>? actions, Color? iconColor, Widget? leading, double? toolbarHeight}){
+    return AppBar(
+      toolbarHeight: toolbarHeight,
+      backgroundColor: Colors.white,
+      forceMaterialTransparency: true,
+      bottom: bottom,
+      elevation: 0,
+      leadingWidth: 200,
+      leading: leading,
+      iconTheme: IconThemeData(color: iconColor ?? GlobalVariableColors.primaryColor),
+      actions: actions,
+    );
+  }
+
+  static AppBar appBarChatTab({var bottom, List<Widget>? actions, Color? iconColor, Widget? leading, double? toolbarHeight, String? title}){
+    return AppBar(
+      toolbarHeight: toolbarHeight,
+      backgroundColor: Colors.white,
+      forceMaterialTransparency: true,
+      bottom: bottom,
+      elevation: 0,
+      title: const Text("Customer Service"),
+      leading: leading,
+      iconTheme: IconThemeData(color: iconColor ?? GlobalVariableColors.primaryColor),
+      actions: actions,
+    );
+  }
 }
