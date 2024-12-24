@@ -6,6 +6,7 @@ import 'package:valbury_mockup/src/components/buttons/global_buttons.dart';
 import 'package:valbury_mockup/src/components/styles/text_style.dart';
 import 'package:valbury_mockup/src/helpers/theme/annotated_region.dart';
 import 'package:valbury_mockup/src/helpers/variable/global_variable.dart';
+import 'package:valbury_mockup/src/views/news/pdf_print_preview.dart';
 import 'package:valbury_mockup/src/views/profiles/edit_profile/index.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -362,7 +363,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                                 ListTile(
                                   dense: true,
-                                  onTap: (){},
+                                  onTap: (){
+                                    Get.to(() => const PdfPrintPreview());
+                                  },
                                   leading: const Icon(Icons.privacy_tip_outlined, color: Colors.black, size: 30),
                                   title: Text("Kebijakan Privasi", style: GlobalTextStyle.defaultTextStyle(fontSize: 16)),
                                 ),

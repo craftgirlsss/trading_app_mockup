@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:valbury_mockup/src/helpers/variable/global_variable.dart';
-import 'package:valbury_mockup/src/views/introduction/splashscreen.dart';
-// import 'package:valbury_mockup/src/views/mainpage.dart';
+// import 'package:valbury_mockup/src/views/introduction/splashscreen.dart';
+import 'package:valbury_mockup/src/views/mainpage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
           buttonColor: GlobalVariableColors.primaryColor
         )
       ),
-      home: const Splashscreen(),
-      // home: const Mainpage(),
+      // home: const Splashscreen(),
+      home: const Mainpage(),
     );
   }
 }
